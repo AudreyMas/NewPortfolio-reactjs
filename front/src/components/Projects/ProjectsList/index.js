@@ -35,14 +35,14 @@ class ProjectList extends Component {
           <h1>{item.name}</h1>
         </div>
         <div className={'description'}>{item.description}</div>
-        <div className={'img'}>
+        {/* <div className={'img'}>
           <img src={item.image_1} alt='imageProject' />
-        </div>
+        </div> */}
       </li>
     ))
 
     return (
-      <div className={'project-list'}>
+      <div>
         <ul>
           {listProjects}
         </ul>

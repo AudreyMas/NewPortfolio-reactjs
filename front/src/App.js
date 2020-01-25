@@ -6,6 +6,8 @@ import SignUp from './components/SignUp/index';
 // import ProjectList from './components/Projects/ProjectsList/index';
 import AdminProject from './components/AdminProject/index'
 import Projects from './components/Projects/index';
+import Contact from './components/Contact/index';
+
 
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
           {/* <Route exact path="/projects" component={ProjectList} /> */}
           <Route exact path="/project-admin" component={AdminProject} />
           <Route exact path="/projects" component={Projects} />
+          <Route exact path="/contact" component={Contact} />
+
         </Switch>
       </div>
     </BrowserRouter>
