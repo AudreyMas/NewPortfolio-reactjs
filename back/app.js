@@ -38,9 +38,26 @@ app.get('/projects', (req, res) => {
   });
 });
 
+
+
+app.get('/project/:id', (req, res) => {
+  const id = req.params.id;
+  connection.query('SELECT * FROM `projects` WHERE id=?  ', [id], (err, results) => {
+    if (err) {
+      return res.send(err)
+    } else {
+      return res.json({
+        data: results
+      })
+    }
+  });
+});
+
+
+
 app.post('/projects/add', (req,res)=>{
-  const {name,description, image_1} = req.query;
-  const INSERT_PROJECT =`INSERT INTO projects (name, description, image_1) VALUE('${name}','${description}','${image_1}')`
+  const {name,description, image_1,image_2,image_3,image_4,image_5,image_6} = req.query;
+  const INSERT_PROJECT =`INSERT INTO projects (name, description, image_1,image_2,image_3,image_4,image_5,image_6) VALUE('${name}','${description}','${image_1}','${image_2}','${image_3}','${image_4}','${image_5}','${image_6}')`
   connection.query(INSERT_PROJECT, (err, results) => {
     if (err) {
       return res.send(err)
