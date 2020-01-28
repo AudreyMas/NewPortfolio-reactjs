@@ -8,8 +8,10 @@ class Contact extends React.Component {
 
   render() {
     return (
-      <div className={'container about-contact'}>
-        <div className={"content"}>
+      <div className={'container '}>
+        <div className={"content about-contact"}>
+        <div className={"bkg-dark"}></div>
+ 
           <Menu/>
           <div className={'about'}>
             <h2>ABOUT</h2>

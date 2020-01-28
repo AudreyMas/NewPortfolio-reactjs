@@ -9,6 +9,13 @@ class AddProject extends Component {
       name: '',
       description: '',
       image_1: '',
+      image_2: '',
+      image_3: '',
+      image_4: '',
+      image_5: '',
+      image_6: '',
+
+
     }
   }
 
@@ -23,7 +30,7 @@ class AddProject extends Component {
       }),
       body: JSON.stringify(this.state),
     };
-    fetch(`http://localhost:5000/projects/add?name=${this.state.name}&description=${this.state.description}&image_1=${this.state.image_1}`, config)
+    fetch(`http://localhost:5000/projects/add?name=${this.state.name}&description=${this.state.description}&image_1=${this.state.image_1}&image_2=${this.state.image_2}&image_3=${this.state.image_3}&image_4=${this.state.image_4}&image_5=${this.state.image_5}&image_6=${this.state.image_6}`, config)
       .then(response => response.JSON.stringify())
       // .then(response => {
       //   if (response.status == 200) {
@@ -51,9 +58,34 @@ class AddProject extends Component {
       description: event.target.value
     })
   }
-  updateImage = (event) => {
+  updateImage1 = (event) => {
     this.setState({
       image_1: event.target.value
+    })
+  }
+  updateImage2 = (event) => {
+    this.setState({
+      image_2: event.target.value
+    })
+  }
+  updateImage3 = (event) => {
+    this.setState({
+      image_3: event.target.value
+    })
+  }
+  updateImage4 = (event) => {
+    this.setState({
+      image_4: event.target.value
+    })
+  }
+  updateImage5 = (event) => {
+    this.setState({
+      image_5: event.target.value
+    })
+  }
+  updateImage6 = (event) => {
+    this.setState({
+      image_6: event.target.value
     })
   }
 
@@ -81,10 +113,33 @@ class AddProject extends Component {
           value={this.state.description}
           placeholder="description"
           onChange={this.updateDescription.bind(this)} />
-        <input
-          value={this.state.image_1}
-          placeholder="picture"
-          onChange={this.updateImage.bind(this)} />
+
+        <div className={"list-pictures"}>
+          <input
+            value={this.state.image_1}
+            placeholder="picture1"
+            onChange={this.updateImage1.bind(this)} />
+          <input
+            value={this.state.image_2}
+            placeholder="picture2"
+            onChange={this.updateImage2.bind(this)} />
+          <input
+            value={this.state.image_3}
+            placeholder="picture3"
+            onChange={this.updateImage3.bind(this)} />
+          <input
+            value={this.state.image_4}
+            placeholder="picture4"
+            onChange={this.updateImage4.bind(this)} />
+          <input
+            value={this.state.image_5}
+            placeholder="picture5"
+            onChange={this.updateImage5.bind(this)} />
+          <input
+            value={this.state.image_6}
+            placeholder="picture6"
+            onChange={this.updateImage6.bind(this)} />
+        </div>
         <button type="submit" onClick={this.addProject}>SENT</button>
         {/* <button onClick={this.handelSubmit}>envoyer console</button> */}
       </div>
