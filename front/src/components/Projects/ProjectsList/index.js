@@ -99,12 +99,18 @@ class ProjectList extends Component {
         {/* <iframe className={"img-hover"} src={item.image_1} width="640" height="480"></iframe> */}
         <img className={"img-hover"} src={item.image_1} alt='imageProject' />
 
-        <div id={"popup1"} className={"overlay"}>
-          <div className={"popup"}>
-          <a className={"close"} href={"#title"}>&times;</a>
-
+        <div id={"popup1"} className={"popup"}>
+          <div className={"popup-content"}>
+            <a className={"close"} href={"#title"}>&times;</a>
             <h2>{item.name}</h2>
-            <img src={item.image_1} alt='imageProject' />
+            <div className={"list-images"}>
+              <img src={item.image_1} alt='imageProject' />
+              <img src={item.image_2} alt='imageProject' />
+              <img src={item.image_3} alt='imageProject' />
+              <img src={item.image_4} alt='imageProject' />
+              <img src={item.image_5} alt='imageProject' />
+              <img src={item.image_6} alt='imageProject' />
+            </div>
           </div>
         </div>
 
