@@ -56,8 +56,8 @@ app.get('/project/:id', (req, res) => {
 
 
 app.post('/projects/add', (req,res)=>{
-  const {name,description, image_1,image_2,image_3,image_4,image_5,image_6} = req.query;
-  const INSERT_PROJECT =`INSERT INTO projects (name, description, image_1,image_2,image_3,image_4,image_5,image_6) VALUE('${name}','${description}','${image_1}','${image_2}','${image_3}','${image_4}','${image_5}','${image_6}')`
+  const {name,description, agency, position, technology, image_1,image_2,image_3,image_4,image_5,image_6} = req.query;
+  const INSERT_PROJECT =`INSERT INTO projects (name, description,agency, position, technology,image_1,image_2,image_3,image_4,image_5,image_6) VALUE('${name}','${description}','${agency}','${position}','${technology}','${image_1}','${image_2}','${image_3}','${image_4}','${image_5}','${image_6}')`
   connection.query(INSERT_PROJECT, (err, results) => {
     if (err) {
       return res.send(err)

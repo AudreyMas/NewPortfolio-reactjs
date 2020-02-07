@@ -49,6 +49,8 @@
 
 import React, { Component } from 'react'
 import AddProject from './AddProject/index'
+import Footer from '../Footer/index'
+
 
 class AdminProject extends Component {
   constructor(props) {
@@ -128,13 +130,19 @@ class AdminProject extends Component {
 
     return (
       
-      <div className={'container'}> {console.log(this.state.id)}
-        <h1>Manage my projects</h1>
-        
-        <ul className={'projects-list'}>
+      <div className={'container '}> {console.log(this.state.id)}
+        <div className={'content admin'}>
+        <h1>ADMIN PLACE</h1>
+        <AddProject />
+        <div className={'projects-list'}>
+        <h2>ALL project</h2>
+        <ul >
           {nameProject}
         </ul>
-        <AddProject />
+        </div>
+        <Footer/>
+
+        </div>
       </div>
     )
   }

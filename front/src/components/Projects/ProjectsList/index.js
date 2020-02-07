@@ -9,7 +9,6 @@ class ProjectList extends Component {
     super(props)
     this.state = {
       projects: [],
-      isShow: false
     }
   }
 
@@ -29,68 +28,15 @@ class ProjectList extends Component {
       .catch(err => console.error(err))
   }
 
-  showHidePopup() {
-    let isShow = this.state.isShow;
-    this.setState({ isShow: !isShow });
-  }
-
 
 
   render() {
     const { projects } = this.state;
 
     let listProjects = projects.map((item, index) => (
-      // <li key={index} onClick={this.showHidePopup.bind(this)} >
-      //   {/* <NavLink to={`/projects/${item.id}`}>
-      //     <div className={"title"}>
-      //       <h1>{item.name}</h1>
-      //     </div>
-      //     <div className={'description'}>{item.description}</div>
-      //     <img src={item.image_1} alt='imageProject' />
-      //   </NavLink> */}
 
-      //   {this.state.isShow ?
-      //     <div className={"popup"}>
-      //       <button type="button" value="X">X</button>
-      //       <iframe src={item.image_1} width="640" height="480"></iframe>
-      //     </div>
 
-      //     : <div className={"list-titles"}>
-      //       <div className={"title"}>
-      //         <h1>{item.name}</h1>
-      //       </div>
-      //       <div className={'description'}>{item.description}</div>
-      //     </div>
-      //   }
-
-      //   {/* {this.state.isShow ?
-      //     <iframe src={item.image_1} width="640" height="480"></iframe>
-      //     : null} */}
-
-      // </li>
-
-      <li key={index} onClick={this.showHidePopup.bind(this)} >
-        {/* <NavLink to={`/projects/${item.id}`}>
-        <div className={"title"}>
-          <h1>{item.name}</h1>
-        </div>
-        <div className={'description'}>{item.description}</div>
-        <img src={item.image_1} alt='imageProject' />
-      </NavLink> */}
-
-        {/* {this.state.isShow ?
-          <div className={"popup"}>
-            <button type="button" value="X">X</button>
-            <iframe src={item.image_1} width="640" height="480"></iframe>
-          </div>
-          : <div className={"list-titles"}>
-            <div className={"title"}>
-              <h1>{item.name}</h1>
-            </div>
-            <div className={'description'}>{item.description}</div>
-          </div>
-        } */}
-
+      <li key={index}  >
 
         <div className={"title"} id={"title"}>
           <a href={"#popup1"}> <h1>{item.name}</h1></a>
@@ -100,11 +46,20 @@ class ProjectList extends Component {
         <img className={"img-hover"} src={item.image_1} alt='imageProject' />
 
         <div id={"popup1"} className={"popup"}>
+          <div className={"header-project"}>
+            <h2>{item.name}</h2>
+            <p>{item.description}</p>
+            <ul>
+              <li><h4>| Agency</h4>{item.agency}</li>
+              <li><h4>| Position</h4>{item.position}</li>
+              <li><h4>| Technology</h4>{item.technology}</li>
+            </ul>
+          </div>
+
           <div className={"popup-content"}>
             <a className={"close"} href={"#title"}>&times;</a>
-            <h2>{item.name}</h2>
             <div className={"list-images"}>
-              <img src={item.image_1} alt='imageProject' />
+              <a href={item.image_1} alt='imageProject'>Site à visité</a>
               <img src={item.image_2} alt='imageProject' />
               <img src={item.image_3} alt='imageProject' />
               <img src={item.image_4} alt='imageProject' />
@@ -116,16 +71,14 @@ class ProjectList extends Component {
 
 
 
-
-
       </li >
     ))
 
     return (
 
-      <div>
+            <div className={"list-project"}>
 
-        <ul>
+        <ul className={"thelist"}>
           {listProjects}
         </ul>
       </div>

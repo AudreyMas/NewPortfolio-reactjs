@@ -8,6 +8,9 @@ class AddProject extends Component {
       // projects: [],
       name: '',
       description: '',
+      agency: '',
+      position: '',
+      technology: '',
       image_1: '',
       image_2: '',
       image_3: '',
@@ -30,7 +33,7 @@ class AddProject extends Component {
       }),
       body: JSON.stringify(this.state),
     };
-    fetch(`http://localhost:5000/projects/add?name=${this.state.name}&description=${this.state.description}&image_1=${this.state.image_1}&image_2=${this.state.image_2}&image_3=${this.state.image_3}&image_4=${this.state.image_4}&image_5=${this.state.image_5}&image_6=${this.state.image_6}`, config)
+    fetch(`http://localhost:5000/projects/add?name=${this.state.name}&description=${this.state.description}&agency=${this.state.agency}&position=${this.state.position}&technology=${this.state.technology}&image_1=${this.state.image_1}&image_2=${this.state.image_2}&image_3=${this.state.image_3}&image_4=${this.state.image_4}&image_5=${this.state.image_5}&image_6=${this.state.image_6}`, config)
       .then(response => response.JSON.stringify())
       // .then(response => {
       //   if (response.status == 200) {
@@ -56,6 +59,21 @@ class AddProject extends Component {
   updateDescription = (event) => {
     this.setState({
       description: event.target.value
+    })
+  }
+  updateAgency = (event) => {
+    this.setState({
+      agency: event.target.value
+    })
+  }
+  updatePosition = (event) => {
+    this.setState({
+      position: event.target.value
+    })
+  }
+  updateTechnology = (event) => {
+    this.setState({
+      technology: event.target.value
     })
   }
   updateImage1 = (event) => {
@@ -104,17 +122,31 @@ class AddProject extends Component {
         {console.log('image:' + this.state.image_1)}
         {console.log('name:' + this.state.name)}
         {console.log('description:' + this.state.description)}
-        <h1>Add project</h1>
-        <input
-          value={this.state.name}
-          placeholder="name"
-          onChange={this.updateName.bind(this)} />
-        <input
-          value={this.state.description}
-          placeholder="description"
-          onChange={this.updateDescription.bind(this)} />
+        <h2>Add project</h2>
+        <div className={'project-add-infos'}>
+          <input
+            value={this.state.name}
+            placeholder="name"
+            onChange={this.updateName.bind(this)} />
+          <textarea className={'description'}
+            value={this.state.description}
+            placeholder="description"
+            onChange={this.updateDescription.bind(this)} />
+          <input
+            value={this.state.agency}
+            placeholder="agency"
+            onChange={this.updateAgency.bind(this)} />
+          <input
+            value={this.state.position}
+            placeholder="position"
+            onChange={this.updatePosition.bind(this)} />
+          <input
+            value={this.state.technology}
+            placeholder="technology(ies)"
+            onChange={this.updateTechnology.bind(this)} />
+        </div>
 
-        <div className={"list-pictures"}>
+        <div className={'project-add-img'}>
           <input
             value={this.state.image_1}
             placeholder="picture1"

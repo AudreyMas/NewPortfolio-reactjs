@@ -20,9 +20,7 @@ class Project extends React.Component {
 
             <Menu/>
     
-            <div className={"list-project"}>
               <ProjectList />
-            </div>
 
             <Footer/>
 
