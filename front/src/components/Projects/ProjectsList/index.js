@@ -41,25 +41,28 @@ class ProjectList extends Component {
         <div className={"title"} id={"title"}>
           <a href={"#popup1"}> <h1>{item.name}</h1></a>
         </div>
-        <div className={'description'}>{item.description}</div>
+        <p className={'description'}>{item.description}</p>
         {/* <iframe className={"img-hover"} src={item.image_1} width="640" height="480"></iframe> */}
-        <img className={"img-hover"} src={item.image_1} alt='imageProject' />
+       <a href={"#popup1"} className={"img-hover"}><img  src={item.image_1} alt='imageProject' /></a>
 
         <div id={"popup1"} className={"popup"}>
           <div className={"header-project"}>
             <h2>{item.name}</h2>
             <p>{item.description}</p>
             <ul>
-              <li><h4>| Agency</h4>{item.agency}</li>
-              <li><h4>| Position</h4>{item.position}</li>
-              <li><h4>| Technology</h4>{item.technology}</li>
+              <li><h4>| Agency</h4><span>{item.agency}</span></li>
+              <li><h4>| Position</h4><span>{item.position}</span></li>
+              <li><h4>| Technology</h4><span>{item.technology}</span></li>
             </ul>
           </div>
 
           <div className={"popup-content"}>
-            <a className={"close"} href={"#title"}>&times;</a>
+            <a className={"close"} href={"#title"} >&times;</a>
             <div className={"list-images"}>
-              <a href={item.image_1} alt='imageProject'>Site à visité</a>
+              {/* <a href={item.image_1} target="_blank" alt='imageProject'>Site à visité</a> */}
+              
+              <img src={item.image_1} alt='imageProject' />
+
               <img src={item.image_2} alt='imageProject' />
               <img src={item.image_3} alt='imageProject' />
               <img src={item.image_4} alt='imageProject' />
