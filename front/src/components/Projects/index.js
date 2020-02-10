@@ -1,11 +1,16 @@
 import React from 'react'
 import ProjectList from './ProjectsList/index'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Menu from '../Menu/index'
 import Footer from '../Footer/index'
 
 
 class Project extends React.Component {
+  timeout = null;
+  state = {
+    isScrolling: false
+  };
+
   render() {
     return (
       <div>
@@ -18,11 +23,11 @@ class Project extends React.Component {
 
             <div className={"bkg-dark"}></div>
 
-            <Menu/>
-    
-              <ProjectList />
+            <Menu />
 
-            <Footer/>
+            <ProjectList />
+          
+            <Footer />
 
           </div>
         </div>

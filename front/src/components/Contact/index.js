@@ -20,16 +20,28 @@ class Contact extends React.Component {
           {/* <div className={'contact'}> */}
           <div className={'about'}>
             <h2>About me</h2>
-            <p>Je suis Audrey Masamba et diplômée d'un bachelier en Écriture Multimédia de l'<a
-              href="http://isfsc.be/ecriture-multimedia/" target="_blank">ISFSC</a> et certifiée Front-end
-                    (React js) de la <a href="https://www.wildcodeschool.com/fr-BE"
-                target="_blank">Wilde Code School</a>.
-              <br />J'ai acquis une expérience d’1 an dans le domaine du webdesign et plusieurs mois en tant que
-              Front-end (react js).
-              <br />J'ai pu participer et réaliser de manière autonome et/ou collaborative à plusieurs projets
-              online ou offline au sein d'entreprises et starts-up (RTL BELGIUM, Média Animation asbl, One4You,
-              Chatbot Plus) ou projets personnels.
-                </p>
+            <p>
+            I'm Audrey a Front-end/Design developer with a
+strong interest of design and web technologies.
+<br/>
+After graduating with distinction from a Bachelor in
+Multimedia Writing, I started working as a
+Consultant for Beobank in 2017 until 2018.
+I worked on multiple projects in front-end
+development, both during and after my education.
+Examples are an online CV generator and an
+internship at Chatbot Plus,...
+<br/>
+After gaining some experience as a Test Engineer,
+I returned to my first love, web development.
+Then continuing my education by deep diving into
+web programming, focusing on REACT js web apps.
+<br/>
+I want to participate in challenging projects
+where I can broaden my knowledge and
+creativity, show my skills and learn from my 
+colleagues.
+            </p>
           </div>
           <ul className={"links"}>
             <li><a href="https://www.linkedin.com/in/audreymasamba/" target="_blank">LINKEDIN</a></li>

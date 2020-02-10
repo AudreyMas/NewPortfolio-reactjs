@@ -14,6 +14,7 @@ class ProjectList extends Component {
 
   componentDidMount() {
     this.getProjects();
+
   }
 
   getProjects() {
@@ -32,18 +33,16 @@ class ProjectList extends Component {
 
   render() {
     const { projects } = this.state;
-
     let listProjects = projects.map((item, index) => (
 
-
-      <li key={index}  >
+      <li key={index}>
 
         <div className={"title"} id={"title"}>
           <a href={"#popup1"}> <h1>{item.name}</h1></a>
         </div>
         <p className={'description'}>{item.description}</p>
-        {/* <iframe className={"img-hover"} src={item.image_1} width="640" height="480"></iframe> */}
-       <a href={"#popup1"} className={"img-hover"}><img  src={item.image_1} alt='imageProject' /></a>
+        <a href={"#popup1"} className={"img-hover"}><img src={item.image_2} alt='imageProject' /></a>
+
 
         <div id={"popup1"} className={"popup"}>
           <div className={"header-project"}>
@@ -53,17 +52,14 @@ class ProjectList extends Component {
               <li><h4>| Agency</h4><span>{item.agency}</span></li>
               <li><h4>| Position</h4><span>{item.position}</span></li>
               <li><h4>| Technology</h4><span>{item.technology}</span></li>
+              <li><h4>| lien</h4><a href={item.image_1} target="_blank" alt='imageProject'>Site à visité</a></li>
             </ul>
           </div>
 
           <div className={"popup-content"}>
             <a className={"close"} href={"#title"} >&times;</a>
             <div className={"list-images"}>
-              {/* <a href={item.image_1} target="_blank" alt='imageProject'>Site à visité</a> */}
-              
-              <img src={item.image_1} alt='imageProject' />
-
-              <img src={item.image_2} alt='imageProject' />
+              <img className={"img-width"} src={item.image_2} alt='imageProject' />
               <img src={item.image_3} alt='imageProject' />
               <img src={item.image_4} alt='imageProject' />
               <img src={item.image_5} alt='imageProject' />
@@ -72,18 +68,23 @@ class ProjectList extends Component {
           </div>
         </div>
 
-
-
       </li >
     ))
 
     return (
 
-            <div className={"list-project"}>
+      <div className={"list-project"}>
 
         <ul className={"thelist"}>
+          {/* <li className={"arrow"} id={"arrow"}>
+            <div >
+              fleche
+              </div>
+          </li> */}
           {listProjects}
         </ul>
+
+
       </div>
     )
   }
