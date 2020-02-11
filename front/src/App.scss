@@ -486,7 +486,7 @@ body {
                     color: black;
                   }
 
-                  &:hover {
+                  &:hover, &:active, &:visited {
                     color: white !important;
                     margin-left: 46px;
                     cursor: pointer;
