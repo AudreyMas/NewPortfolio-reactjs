@@ -23,6 +23,8 @@ function App() {
           <Route exact path="/projects/:name" component={DetailsProject} />
 
           <Route exact path="/contact" component={Contact} />
+          <Route component={() => (<div>404 Not found </div>)} />
+
 
         </Switch>
       </div>
